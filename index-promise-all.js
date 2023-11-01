@@ -19,6 +19,7 @@ const fetchPokemonList = async () => {
 
         // Then, fetch all the pokemon images simultaneously and wait for them to complete
         await Promise.all(
+            // This is crazy stuff. Don't try this without supervision 😫
             results.map(({ name, url }) => fetchPokemon(url, name))
         );
 
